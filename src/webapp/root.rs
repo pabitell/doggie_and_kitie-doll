@@ -11,7 +11,7 @@ use crate::translations::make_languages;
 
 pub struct Root {}
 
-#[derive(Clone, Debug, PartialEq, Default, Properties)]
+#[derive(Clone, Debug, PartialEq, Eq, Default, Properties)]
 pub struct Props {}
 
 pub enum Msg {}

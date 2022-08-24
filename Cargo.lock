@@ -235,31 +235,19 @@ dependencies = [
 
 [[package]]
 name = "doggie_and_kitie_doll"
-version = "0.2.0"
+version = "0.1.0"
 dependencies = [
  "anyhow",
- "base64",
  "console_error_panic_hook",
- "data-url",
  "fluent",
- "futures",
- "getrandom",
- "gloo 0.8.0",
- "image 0.24.3",
  "include_dir",
  "intl-memoizer",
- "js-sys",
  "lazy_static",
- "log",
  "pabitell-lib",
- "qrcode",
  "serde",
  "serde_json",
  "uuid",
- "wasm-bindgen",
- "wasm-bindgen-futures",
  "wasm-logger",
- "web-sys",
  "wee_alloc",
  "yew",
 ]
