@@ -4,6 +4,8 @@ pub mod items;
 pub mod narrator;
 pub mod scenes;
 pub mod translations;
+#[cfg(feature = "with_webapp")]
+pub mod webapp;
 pub mod world;
 
 #[cfg(test)]

@@ -3,15 +3,15 @@ name = "doggie_and_kitie_doll"
 version = "0.1.0"
 authors = ["Stepan Henek <stepan@henek.name>"]
 edition = "2021"
-description = "Interactive storytelling - doggie and kitie cake story"
+description = "Interactive storytelling - doggie and kitie doll story"
 license = "CC0"
 readme = "README.md"
 keywords = ["games", "stories", "books"]
-repository = "https://github.com/shenek/pabitell"
+repository = "https://github.com/pabitell/doggie_and_kitie-doll"
 categories = ["games", "web-programming"]
 
 [features]
-default = [ 'with_webapp' ]
+default = []
 with_webapp = [
 	'console_error_panic_hook',
 	'pabitell-lib/with_webapp',
@@ -21,6 +21,9 @@ with_webapp = [
 	'wee_alloc',
 	'yew',
 ]	
+with_cli = [
+	'pabitell-lib/with_cli',
+]
 
 [dependencies]
 anyhow = "1"
@@ -29,7 +32,7 @@ console_error_panic_hook = { version = "0.1", optional = true }
 include_dir = { version = "0.7", features = ["glob"] }
 intl-memoizer = { version = "0.5" }
 lazy_static = { version = "1" }
-pabitell-lib = { version = "0.2.0", features = ["with_webapp"], optional = true }
+pabitell-lib = { version = "0.3.0" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 uuid = { version = "1.1", features = [ 'v4', 'js' ] } # remove features once https://github.com/thedodd/trunk/pull/183 is merged 
@@ -41,10 +44,17 @@ yew = { version = "0.19", optional = true }
 [dev-dependencies]
 
 
+[lib]
+name = "common"
+path = "src/lib.rs"
+
 [[bin]]
-name = "doggie_and_kitie-doll"
-path = "src/main.rs"
+name = "webapp"
 required-features = ["with_webapp"]
+
+[[bin]]
+name = "cli"
+required-features = ["with_cli"]
 
 [profile.release]
 # less code to include into binary
